@@ -2,6 +2,11 @@ import React, {Fragment} from 'react'
 import './table.css'
 
 const Table = ({data, title}) => {
+
+    const reformatTitle = (title) => {
+        return (title[0].toUpperCase()+title.slice(1)).split('_').join(' ')
+    };
+
     return (
         <Fragment>
             <h2>{title}</h2>
@@ -11,7 +16,7 @@ const Table = ({data, title}) => {
                     data && data.columns && <tr>
                         {
                             data.columns.map((item, index) => (
-                                <th key={index}>{item}</th>
+                                <th key={index}>{ reformatTitle(item) }</th>
                             ))
                         }
                     </tr>

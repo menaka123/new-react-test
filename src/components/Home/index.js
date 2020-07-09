@@ -6,10 +6,7 @@ const Home = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        csv('./users.csv').then(res => {
-            console.log(res.length)
-            setData(res)
-        })
+        csv('./users.csv').then(res => (setData(res)))
     }, []);
 
     return (
