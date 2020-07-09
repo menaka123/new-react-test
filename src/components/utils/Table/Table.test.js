@@ -15,7 +15,7 @@ describe('<Table />', () => {
         const wrapper = shallow(<Table title={title}/>);
         csv('./users.csv').then(res => {
             wrapper.setProps({ data: res });
-            expect(wrapper.find('tr')).toHaveLength(100);
+            expect(wrapper.find('tr')).toHaveLength(res.length);
         })
     })
 

@@ -7,7 +7,7 @@ const Home = () => {
 
     useEffect(() => {
         csv('./users.csv').then(res => {
-            console.log(res)
+            console.log(res.length)
             setData(res)
         })
     }, []);
