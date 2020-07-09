@@ -4,7 +4,7 @@ import './table.css'
 const Table = ({data, title}) => {
 
     const reformatTitle = (title) => {
-        return (title[0].toUpperCase()+title.slice(1)).split('_').join(' ')
+        return title && (title[0].toUpperCase()+title.slice(1)).split('_').join(' ')
     };
 
     return (
